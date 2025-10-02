@@ -1,0 +1,85 @@
+Build a modern, responsive portfolio website for Sopan More using Next.js (latest App Router). The portfolio should pull data from my resume (provided separately) to automatically fill in content such as experience, education, projects, certifications, and skills.
+
+Website Requirements:
+
+Homepage / Landing Page
+
+Clean, professional design.
+
+My profile picture, name, and title (e.g., AI Engineer | Computer Vision | Generative AI).
+
+A short About Me section (use resume summary or write a short introduction).
+
+Call-to-action buttons: "Download Resume" (PDF download) and "Contact Me" (links to contact page/form).
+
+Sections (auto-filled from resume):
+
+Experience: Timeline view of my work experience (company, role, duration, description).
+
+Education: Degrees, schools, years, and highlights.
+
+Projects: Cards with title, description, tech stack, GitHub/demo links.
+
+Certifications: Logos (if available) + title + issuer.
+
+Skills: Categorized (Programming, AI/ML, Cloud, Tools).
+
+Contact: Contact form (name, email, message) + my social links (LinkedIn, GitHub, X/Twitter).
+
+Database (optional):
+
+Use a free database (SQLite with Prisma, or Supabase free tier, or Firebase free tier) to store projects, skills, experiences, and certifications, so I can update them easily.
+
+Fallback: Use static JSON files if database is not connected.
+
+Design & UI:
+
+Use Tailwind CSS for styling.
+
+Use shadcn/ui components for clean design (cards, buttons, forms).
+
+Ensure mobile responsiveness.
+
+Add light/dark mode toggle.
+
+Extra Features (optional but nice-to-have):
+
+SEO-friendly (next-seo or metadata).
+
+Add animations with Framer Motion.
+
+Blog section (static markdown posts in /content/blog).
+
+Technical Requirements:
+
+Framework: Next.js (App Router).
+
+Styling: Tailwind CSS + shadcn/ui.
+
+Database (optional): Supabase / Firebase free tier / SQLite with Prisma.
+
+Deployment: Ready to deploy on Vercel (free).
+
+Code structure:
+
+app/ for routing.
+
+components/ for reusable UI.
+
+lib/ for database connection or data fetching.
+
+data/ for fallback JSON data (projects, skills, etc.).
+
+Instructions for Agent:
+
+Parse my resume and extract: profile picture (if available), experience, education, projects, certifications, and skills.
+
+Generate Next.js codebase with all sections auto-filled.
+
+Make sure the site works locally with minimal setup.
+
+Include instructions in README.md for me to:
+
+Run locally (npm install && npm run dev).
+
+Connect to database if chosen.
