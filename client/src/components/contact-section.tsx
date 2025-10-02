@@ -222,7 +222,7 @@ export function ContactSection() {
                 </div>
               </div>
 
-              <Card className="bg-primary/5 border-primary/20" data-testid="opportunities-card">
+              {/* <Card className="bg-primary/5 border-primary/20" data-testid="opportunities-card">
                 <CardContent className="p-6">
                   <h4 className="font-semibold mb-2 flex items-center">
                     <Briefcase className="w-4 h-4 text-primary mr-2" />
@@ -232,7 +232,7 @@ export function ContactSection() {
                     I'm currently seeking challenging full-time roles as an AI/ML Engineer or Computer Vision Engineer. Particularly interested in model fine-tuning, MLOps, and creating tangible product impact.
                   </p>
                 </CardContent>
-              </Card>
+              </Card> */}
             </div>
           </div>
         </div>

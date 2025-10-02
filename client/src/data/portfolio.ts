@@ -7,7 +7,7 @@ export const portfolioData = {
     phone: "+918879594650",
     linkedin: "https://linkedin.com/in/sopan-more-aab7aa188",
     github: "https://github.com/SopanMore11",
-    profileImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&h=300",
+    profileImage: "/my_photo.png",
   },
   
   about: `As an AI Engineer with a deep-seated passion for building intelligent systems, I thrive at the intersection of foundation models, computer vision, and scalable MLOps. My experience at Bosch has been centered on architecting and deploying end-to-end Generative AI solutions, from developing sophisticated RAG-based chatbots with Azure OpenAI and LangChain to designing complex agentic workflows that drive automation and business value.
