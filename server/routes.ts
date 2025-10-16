@@ -1,10 +1,9 @@
 import type { Express } from "express";
-import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactMessageSchema } from "@shared/schema";
 import { z } from "zod";
 
-export async function registerRoutes(app: Express): Promise<Server> {
+export function registerRoutes(app: Express): void {
   // Contact form submission endpoint
   app.post("/api/contact", async (req, res) => {
     try {
@@ -13,9 +12,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json({ message: "Message sent successfully", id: message.id });
     } catch (error) {
       if (error instanceof z.ZodError) {
-        res.status(400).json({ 
-          message: "Validation error", 
-          errors: error.errors 
+        res.status(400).json({
+          message: "Validation error",
+          errors: error.errors,
         });
       } else {
         res.status(500).json({ message: "Internal server error" });
@@ -33,6 +32,5 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  const httpServer = createServer(app);
-  return httpServer;
+  // The function now simply adds routes to the app and doesn't return anything.
 }
