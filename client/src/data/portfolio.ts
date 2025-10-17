@@ -8,6 +8,7 @@ export const portfolioData = {
     linkedin: "https://linkedin.com/in/sopan-more-aab7aa188",
     github: "https://github.com/SopanMore11",
     profileImage: "/my_photo.png",
+    twitter: "https://x.com/Sopan_More11"
   },
   
   about: `As an AI Engineer with a deep-seated passion for building intelligent systems, I thrive at the intersection of foundation models, computer vision, and scalable MLOps. My experience at Bosch has been centered on architecting and deploying end-to-end Generative AI solutions, from developing sophisticated RAG-based chatbots with Azure OpenAI and LangChain to designing complex agentic workflows that drive automation and business value.
@@ -63,12 +64,11 @@ With a solid foundation in both software engineering and advanced machine learni
       description: "Built a modular, scalable pipeline to fine-tune Stable Diffusion using LoRA, reducing compute cost and enabling easy customization for diverse image generation tasks.",
       image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
       technologies: ["PyTorch", "Stable Diffusion", "LoRA", "MLOps", "Diffusers"],
-      githubUrl: "#",
+      githubUrl: "https://github.com/SopanMore11/Diffusion-Model-Fine-tuner",
       demoUrl: "#",
       type: "personal",
       longDescription: "This project demonstrates advanced techniques in fine-tuning diffusion models using Low-Rank Adaptation (LoRA), a parameter-efficient method that significantly reduces computational requirements while maintaining model quality. The pipeline is designed to be modular and scalable, making it accessible for various image generation tasks.",
       objectives: [
-        "Reduce computational cost of model fine-tuning by 95%",
         "Create a reproducible, config-driven training pipeline",
         "Enable rapid experimentation with different datasets and styles",
         "Build a production-ready deployment system"
@@ -88,7 +88,6 @@ With a solid foundation in both software engineering and advanced machine learni
         "Ensuring reproducibility across different hardware configurations"
       ],
       results: [
-        "95% reduction in training compute cost compared to full fine-tuning",
         "Successfully fine-tuned models on custom datasets with <4GB VRAM",
         "Achieved comparable quality to full fine-tuning methods",
         "Built a reusable pipeline adopted by the open-source community"
@@ -103,7 +102,7 @@ With a solid foundation in both software engineering and advanced machine learni
       description: "Developed a multi-layer LSTM neural network with advanced financial indicators (EMA, RSI, MACD) for accurate next-day stock price predictions.",
       image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
       technologies: ["LSTM", "TensorFlow", "Time Series", "Financial Analytics", "Python"],
-      githubUrl: "#",
+      githubUrl: "https://github.com/SopanMore11/STOCK-PREDICTOR",
       demoUrl: "#",
       type: "personal",
       longDescription: "A sophisticated stock price prediction system leveraging Long Short-Term Memory (LSTM) neural networks combined with technical financial indicators. The model processes historical price data along with derived features to forecast next-day stock prices with high accuracy.",

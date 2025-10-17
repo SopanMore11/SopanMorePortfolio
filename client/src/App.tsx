@@ -19,6 +19,9 @@ function Router() {
 }
 
 function App() {
+  if (typeof window !== "undefined" && "scrollRestoration" in window.history) {
+    window.history.scrollRestoration = "manual";
+  }
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider defaultTheme="light" storageKey="portfolio-ui-theme">

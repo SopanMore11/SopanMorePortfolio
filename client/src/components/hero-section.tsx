@@ -1,12 +1,47 @@
 import { Button } from "@/components/ui/button";
-import { Download, Mail, Github, Linkedin, Brain, Cpu, Zap } from "lucide-react";
+import {
+  Download,
+  Mail,
+  Github,
+  Linkedin,
+  Brain,
+  Cpu,
+  Zap,
+} from "lucide-react";
 import { portfolioData } from "@/data/portfolio";
 
 export function HeroSection() {
   const { personal } = portfolioData;
 
   const handleDownloadResume = () => {
-    // TODO: Implement actual PDF download
+    // The path to your resume file in the public folder (served at the site root)
+    // Make sure the PDF file is copied to `client/public` with this filename.
+    const resumeUrl = "../../public/CV_Sopan_More.pdf";
+
+    // Create a temporary anchor element
+    const link = document.createElement("a");
+    link.href = resumeUrl;
+
+    // Set the download attribute with a desired filename
+    link.setAttribute("download", "CV_Sopan_More.pdf");
+
+    // Append the link to the body
+    document.body.appendChild(link);
+
+    // Programmatically click the link to trigger the download
+    link.click();
+
+    // Some browsers may ignore the download attribute for certain mime-types or cross-origin.
+    // As a fallback, open the file in a new tab if the download didn't start.
+    setTimeout(() => {
+      // If the document is still visible and filename not downloaded, open in new tab
+      // This is a best-effort fallback and will open the PDF in the browser.
+      window.open(resumeUrl, "_blank", "noopener");
+    }, 500);
+
+    // Clean up and remove the link
+    document.body.removeChild(link);
+
     console.log("Downloading resume...");
   };
 
@@ -37,15 +72,21 @@ export function HeroSection() {
               className="relative w-40 h-40 rounded-full shadow-2xl border-4 border-white/30 backdrop-blur-sm"
               data-testid="profile-image"
             />
-            
+
             {/* Floating AI icons */}
             <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center animate-float">
               <Brain className="w-4 h-4 text-white" />
             </div>
-            <div className="absolute -bottom-2 -left-2 w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center animate-float" style={{animationDelay: '1s'}}>
+            <div
+              className="absolute -bottom-2 -left-2 w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center animate-float"
+              style={{ animationDelay: "1s" }}
+            >
               <Cpu className="w-4 h-4 text-white" />
             </div>
-            <div className="absolute top-1/2 -right-6 w-6 h-6 bg-cyan-500 rounded-full flex items-center justify-center animate-float" style={{animationDelay: '2s'}}>
+            <div
+              className="absolute top-1/2 -right-6 w-6 h-6 bg-cyan-500 rounded-full flex items-center justify-center animate-float"
+              style={{ animationDelay: "2s" }}
+            >
               <Zap className="w-3 h-3 text-white" />
             </div>
           </div>
@@ -60,17 +101,32 @@ export function HeroSection() {
 
           {/* Dynamic title with typing effect */}
           <div className="relative mb-8">
-            <p className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-4 bg-gradient-to-r from-gray-700 to-gray-900 dark:from-gray-200 dark:to-gray-400 bg-clip-text text-transparent" data-testid="hero-title">
+            <p
+              className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-4 bg-gradient-to-r from-gray-700 to-gray-900 dark:from-gray-200 dark:to-gray-400 bg-clip-text text-transparent"
+              data-testid="hero-title"
+            >
               AI Engineer & ML Innovator
             </p>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Building the future with <span className="text-blue-500 font-semibold">Generative AI</span>, 
-              <span className="text-purple-500 font-semibold"> Computer Vision</span>, and 
-              <span className="text-cyan-500 font-semibold"> Large Language Models</span>
+              Building the future with{" "}
+              <span className="text-blue-500 font-semibold">Generative AI</span>
+              ,
+              <span className="text-purple-500 font-semibold">
+                {" "}
+                Computer Vision
+              </span>
+              , and
+              <span className="text-cyan-500 font-semibold">
+                {" "}
+                Large Language Models
+              </span>
             </p>
           </div>
 
-          <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto flex items-center justify-center" data-testid="hero-location">
+          <p
+            className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto flex items-center justify-center"
+            data-testid="hero-location"
+          >
             <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
             {personal.location}
           </p>
@@ -108,7 +164,11 @@ export function HeroSection() {
               className="group w-14 h-14 rounded-full glass-card hover:bg-blue-500/20 transition-all duration-300"
               data-testid="linkedin-link"
             >
-              <a href={personal.linkedin} target="_blank" rel="noopener noreferrer">
+              <a
+                href={personal.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Linkedin className="w-6 h-6 group-hover:scale-125 transition-transform duration-300" />
               </a>
             </Button>
@@ -120,7 +180,11 @@ export function HeroSection() {
               className="group w-14 h-14 rounded-full glass-card hover:bg-gray-500/20 transition-all duration-300"
               data-testid="github-link"
             >
-              <a href={personal.github} target="_blank" rel="noopener noreferrer">
+              <a
+                href={personal.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Github className="w-6 h-6 group-hover:scale-125 transition-transform duration-300" />
               </a>
             </Button>

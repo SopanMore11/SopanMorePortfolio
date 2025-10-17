@@ -35,7 +35,7 @@ export default function Home() {
 
             <div className="flex items-center space-x-6">
               <p className="text-muted-foreground text-sm" data-testid="footer-copyright">
-                © 2024 {personal.name}. All rights reserved.
+                © 2025 {personal.name}. All rights reserved.
               </p>
             </div>
           </div>

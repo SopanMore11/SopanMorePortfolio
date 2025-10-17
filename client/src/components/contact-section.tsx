@@ -10,7 +10,16 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertContactMessageSchema } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
-import { Send, Mail, MapPin, Briefcase, Linkedin, Github } from "lucide-react";
+import {
+  Send,
+  Mail,
+  MapPin,
+  Briefcase,
+  Linkedin,
+  Github,
+  Phone,
+  Twitter,
+} from "lucide-react";
 import { portfolioData } from "@/data/portfolio";
 import type { InsertContactMessage } from "@shared/schema";
 
@@ -60,19 +69,31 @@ export function ContactSection() {
     <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4" data-testid="contact-title">
+          <h2
+            className="text-3xl sm:text-4xl font-bold mb-4"
+            data-testid="contact-title"
+          >
             Get In Touch
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-6"></div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto" data-testid="contact-description">
-            I'm always interested in discussing new opportunities in AI/ML engineering, computer vision, and innovative AI projects. Let's connect!
+          <p
+            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+            data-testid="contact-description"
+          >
+            I'm always interested in discussing new opportunities in AI/ML
+            engineering, computer vision, and innovative AI projects. Let's
+            connect!
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div className="animate-slide-up">
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" data-testid="contact-form">
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="space-y-6"
+              data-testid="contact-form"
+            >
               <div>
                 <Label htmlFor="name">Name</Label>
                 <Input
@@ -82,7 +103,10 @@ export function ContactSection() {
                   data-testid="input-name"
                 />
                 {form.formState.errors.name && (
-                  <p className="text-sm text-destructive mt-1" data-testid="error-name">
+                  <p
+                    className="text-sm text-destructive mt-1"
+                    data-testid="error-name"
+                  >
                     {form.formState.errors.name.message}
                   </p>
                 )}
@@ -98,7 +122,10 @@ export function ContactSection() {
                   data-testid="input-email"
                 />
                 {form.formState.errors.email && (
-                  <p className="text-sm text-destructive mt-1" data-testid="error-email">
+                  <p
+                    className="text-sm text-destructive mt-1"
+                    data-testid="error-email"
+                  >
                     {form.formState.errors.email.message}
                   </p>
                 )}
@@ -113,7 +140,10 @@ export function ContactSection() {
                   data-testid="input-subject"
                 />
                 {form.formState.errors.subject && (
-                  <p className="text-sm text-destructive mt-1" data-testid="error-subject">
+                  <p
+                    className="text-sm text-destructive mt-1"
+                    data-testid="error-subject"
+                  >
                     {form.formState.errors.subject.message}
                   </p>
                 )}
@@ -129,7 +159,10 @@ export function ContactSection() {
                   data-testid="input-message"
                 />
                 {form.formState.errors.message && (
-                  <p className="text-sm text-destructive mt-1" data-testid="error-message">
+                  <p
+                    className="text-sm text-destructive mt-1"
+                    data-testid="error-message"
+                  >
                     {form.formState.errors.message.message}
                   </p>
                 )}
@@ -157,12 +190,18 @@ export function ContactSection() {
           <div className="animate-slide-up">
             <div className="space-y-8">
               <div>
-                <h3 className="text-xl font-semibold mb-6" data-testid="contact-info-title">
+                <h3
+                  className="text-xl font-semibold mb-6"
+                  data-testid="contact-info-title"
+                >
                   Contact Information
                 </h3>
 
                 <div className="space-y-4">
-                  <div className="flex items-center space-x-4" data-testid="contact-email">
+                  <div
+                    className="flex items-center space-x-4"
+                    data-testid="contact-email"
+                  >
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                       <Mail className="w-5 h-5 text-primary" />
                     </div>
@@ -178,20 +217,47 @@ export function ContactSection() {
                     </div>
                   </div>
 
-                  <div className="flex items-center space-x-4" data-testid="contact-location">
+                  <div
+                    className="flex items-center space-x-4"
+                    data-testid="contact-phone"
+                  >
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <Phone className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-medium">Contact</p>
+                      <a
+                        href={`tel:${personal.phone}`}
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        data-testid="contact-email-link"
+                      >
+                        {personal.phone}
+                      </a>
+                    </div>
+                  </div>
+
+                  <div
+                    className="flex items-center space-x-4"
+                    data-testid="contact-location"
+                  >
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                       <MapPin className="w-5 h-5 text-primary" />
                     </div>
                     <div>
                       <p className="font-medium">Location</p>
-                      <p className="text-muted-foreground">{personal.location}</p>
+                      <p className="text-muted-foreground">
+                        {personal.location}
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-6" data-testid="social-links-title">
+                <h3
+                  className="text-xl font-semibold mb-6"
+                  data-testid="social-links-title"
+                >
                   Social Links
                 </h3>
 
@@ -202,7 +268,11 @@ export function ContactSection() {
                     className="flex items-center justify-center space-x-2 p-4"
                     data-testid="contact-linkedin"
                   >
-                    <a href={personal.linkedin} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={personal.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Linkedin className="w-5 h-5 text-primary" />
                       <span className="font-medium">LinkedIn</span>
                     </a>
@@ -212,9 +282,29 @@ export function ContactSection() {
                     variant="outline"
                     asChild
                     className="flex items-center justify-center space-x-2 p-4"
+                    data-testid="contact-linkedin"
+                  >
+                    <a
+                      href={personal.twitter}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Twitter className="w-5 h-5 text-primary" />
+                      <span className="font-medium">X</span>
+                    </a>
+                  </Button>
+
+                  <Button
+                    variant="outline"
+                    asChild
+                    className="flex items-center justify-center space-x-2 p-4"
                     data-testid="contact-github"
                   >
-                    <a href={personal.github} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={personal.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Github className="w-5 h-5 text-primary" />
                       <span className="font-medium">GitHub</span>
                     </a>
